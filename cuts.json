@@ -1,0 +1,108 @@
+{
+    "board_plans": [
+        {
+            "board_id": 4,
+            "board_length": 184.0,
+            "board_width": 6.0,
+            "cuts": [
+                {
+                    "cut_id": 0,
+                    "x": 0.0,
+                    "y": 0.0,
+                    "length": 120.0,
+                    "width": 6.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 8,
+                    "x": 120.0,
+                    "y": 0.0,
+                    "length": 36.0,
+                    "width": 4.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 2,
+                    "x": 120.0,
+                    "y": 4.0,
+                    "length": 55.0,
+                    "width": 2.0,
+                    "rotated": false
+                }
+            ],
+            "waste_percentage": 11.77536231884058
+        },
+        {
+            "board_id": 7,
+            "board_length": 120.0,
+            "board_width": 8.0,
+            "cuts": [
+                {
+                    "cut_id": 3,
+                    "x": 0.0,
+                    "y": 0.0,
+                    "length": 55.0,
+                    "width": 2.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 4,
+                    "x": 0.0,
+                    "y": 2.0,
+                    "length": 55.0,
+                    "width": 2.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 1,
+                    "x": 0.0,
+                    "y": 4.0,
+                    "length": 40.0,
+                    "width": 2.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 9,
+                    "x": 0.0,
+                    "y": 6.0,
+                    "length": 36.0,
+                    "width": 2.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 10,
+                    "x": 36.0,
+                    "y": 6.0,
+                    "length": 36.0,
+                    "width": 2.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 5,
+                    "x": 40.0,
+                    "y": 4.0,
+                    "length": 10.0,
+                    "width": 2.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 6,
+                    "x": 50.0,
+                    "y": 4.0,
+                    "length": 10.0,
+                    "width": 2.0,
+                    "rotated": false
+                },
+                {
+                    "cut_id": 7,
+                    "x": 55.0,
+                    "y": 0.0,
+                    "length": 10.0,
+                    "width": 2.0,
+                    "rotated": false
+                }
+            ],
+            "waste_percentage": 47.5
+        }
+    ]
+}

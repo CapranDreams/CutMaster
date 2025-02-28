@@ -1,0 +1,19 @@
+{
+    "supply": [
+        {
+            "length": 200,
+            "width": 12,
+            "depth": 1
+        },
+        {
+            "length": 200,
+            "width": 12,
+            "depth": 1
+        },
+        {
+            "length": 200,
+            "width": 12,
+            "depth": 1
+        }
+    ]
+}

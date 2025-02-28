@@ -1,0 +1,6 @@
+navigate to the directory containing the app folder (root:CutMaster) and run the following command:
+    python -m uvicorn app.main:app --reload --port 9988
+
+open a web browser and navigate to:
+   http://127.0.0.1:9988/
+

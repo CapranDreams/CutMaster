@@ -1,0 +1,48 @@
+{
+    "cuts": [
+        {
+            "length": 120,
+            "width": 6
+        },
+        {
+            "length": 40,
+            "width": 2
+        },
+        {
+            "length": 55,
+            "width": 2
+        },
+        {
+            "length": 55,
+            "width": 2
+        },
+        {
+            "length": 55,
+            "width": 2
+        },
+        {
+            "length": 10,
+            "width": 2
+        },
+        {
+            "length": 10,
+            "width": 2
+        },
+        {
+            "length": 10,
+            "width": 2
+        },
+        {
+            "length": 36,
+            "width": 4
+        },
+        {
+            "length": 36,
+            "width": 2
+        },
+        {
+            "length": 36,
+            "width": 2
+        }
+    ]
+}

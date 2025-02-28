@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutting Optimizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cutting Optimizer</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('inventory')">Board Inventory</button>
+            <button class="tab-btn" onclick="openTab('optimize')">Optimize Cuts</button>
+            <button class="tab-btn" onclick="openTab('config')">Cost Configuration</button>
+        </div>
+        
+        <div id="inventory" class="tab-content active">
+            <h2>Board Inventory</h2>
+            <div class="card">
+                <h3>Upload Boards</h3>
+                <form id="upload-boards-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="boards-file">Upload boards.json file:</label>
+                        <input type="file" id="boards-file" name="file" accept=".json">
+                    </div>
+                    
+                    <div class="manual-entry-section">
+                        <h4>Or add boards manually:</h4>
+                        <div class="form-group">
+                            <label for="board-quantity">Quantity:</label>
+                            <input type="number" id="board-quantity" name="quantity" min="1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="board-length">Length (inches):</label>
+                            <input type="number" id="board-length" name="length" step="0.05" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="board-width">Width (inches):</label>
+                            <input type="number" id="board-width" name="width" step="0.05" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="board-depth">Depth (inches):</label>
+                            <input type="number" id="board-depth" name="depth" step="0.05" min="0">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Add Boards</button>
+                </form>
+            </div>
+            
+            <div class="card">
+                <h3>Current Inventory</h3>
+                <div id="inventory-list">
+                    <p>Loading inventory...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="optimize" class="tab-content">
+            <h2>Optimize Cuts</h2>
+            <div class="card">
+                <h3>Upload Cut List</h3>
+                <form id="optimize-cuts-form" enctype="multipart/form-data">
+                    <div class="optimize-form-row">
+                        <div class="form-group">
+                            <label for="cuts-file">Upload cutlist.json file:</label>
+                            <input type="file" id="cuts-file" name="file" accept=".json">
+                        </div>
+                        <div class="form-group">
+                            <label for="optimize-for">Optimize for:</label>
+                            <select id="optimize-for" name="optimize_for">
+                                <option value="waste">Minimal Waste</option>
+                                <option value="cost">Minimal Cost</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Optimize Cuts</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="optimization-results" class="card hidden">
+                <h3>Optimization Results</h3>
+                <div class="results-summary">
+                    <p>Total Waste: <span id="total-waste">0</span>%</p>
+                    <p>Total Cost: $<span id="total-cost">0</span></p>
+                    <p>Boards Used: <span id="boards-used">0</span></p>
+                </div>
+                
+                <div id="unplaced-cuts-warning" class="warning hidden">
+                    <p>Warning: Some cuts could not be placed with the available boards!</p>
+                    <div id="unplaced-cuts-list"></div>
+                </div>
+                
+                <div id="board-plans-container"></div>
+                
+                <div class="actions">
+                    <button id="accept-cuts-btn" class="btn">Accept Cuts</button>
+                    <button id="reject-cuts-btn" class="btn btn-secondary">Reject</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="config" class="tab-content">
+            <h2>Cost Configuration</h2>
+            <div class="card">
+                <h3>Set Board Cost</h3>
+                <form id="board-cost-form">
+                    <div class="form-group">
+                        <label for="cost-per-unit">Cost per board foot ($):</label>
+                        <input type="number" id="cost-per-unit" name="cost_per_unit" step="0.01" required>
+                        <small>A board foot is a volume measurement equal to 144 cubic inches (12" × 12" × 1").</small>
+                    </div>
+                    <button type="submit" class="btn">Save Configuration</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+</body>
+</html> 
